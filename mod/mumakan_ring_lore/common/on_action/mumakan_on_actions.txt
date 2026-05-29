@@ -1,0 +1,78 @@
+######################################################################
+# Mumakan Ring-Lore & Shadow Sovereignty - On-Actions
+# We HOOK built-in on_actions by adding our own custom on_action to their
+# on_actions = { } list. CK3 merges these built-in hooks across files, so this
+# does NOT override / erase RoE's or the base game's entries. (Unique filename,
+# so no file-level collision with RoE's death.txt / yearly_on_actions.txt.)
+######################################################################
+
+# ---- Hooks into built-in on_actions ----
+yearly_playable_pulse = {
+	on_actions = { mumakan_yearly_maintenance }
+}
+
+on_death = {
+	on_actions = { mumakan_on_death }
+}
+
+on_game_start = {
+	on_actions = { mumakan_on_game_start }
+}
+
+# ---- Our custom on_actions ----
+
+# Runs yearly for each playable character; only does work for ring bearers.
+mumakan_yearly_maintenance = {
+	trigger = {
+		has_character_flag = mumakan_is_master_ring_bearer
+	}
+	effect = {
+		# Re-pin Dread on the awakened bearer (belt-and-suspenders; the
+		# dread_baseline_add modifier already holds it at 100).
+		if = {
+			limit = { has_character_flag = mumakan_master_ring_awakened }
+			add_dread = 100
+		}
+		# Maintain ring-bound servants: faction immunity + dynastic scission.
+		every_vassal_or_below = {
+			limit = { has_trait = loyalty_to_the_ring }
+			mumakan_faction_immunity_effect = yes
+			mumakan_cadet_scission_effect = yes
+		}
+	}
+}
+
+# On death, pass the Shadow Sovereignty chain / ring-servant status to the heir.
+mumakan_on_death = {
+	trigger = {
+		OR = {
+			has_character_flag = mumakan_is_master_ring_bearer
+			has_trait = loyalty_to_the_ring
+		}
+	}
+	effect = {
+		if = {
+			limit = { has_character_flag = mumakan_is_master_ring_bearer }
+			mumakan_transfer_bearer_status_effect = yes
+		}
+		if = {
+			limit = { has_trait = loyalty_to_the_ring }
+			mumakan_ringbound_servant_inherit_effect = yes
+		}
+	}
+}
+
+# Re-seed the monthly tribute scheduler when the mod is added to a game where a
+# bearer already exists (scheduled events otherwise persist across saves).
+mumakan_on_game_start = {
+	effect = {
+		every_living_character = {
+			limit = {
+				has_character_flag = mumakan_is_master_ring_bearer
+				NOT = { has_character_flag = mumakan_tribute_scheduler_active }
+			}
+			add_character_flag = mumakan_tribute_scheduler_active
+			trigger_event = { id = mumakan_ring.0020 days = 30 }
+		}
+	}
+}
