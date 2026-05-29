@@ -1,0 +1,55 @@
+######################################################################
+# Mumakan Ring-Lore & Shadow Sovereignty - Artifact Templates
+# Modelled on RoE's elven_ring_template. The actual stat bonuses come from the
+# "modifier = ..." set in create_artifact (see scripted_effects); the template
+# only governs equip/benefit rules and the fallback. can_benefit = always yes
+# means the forger always receives the full power.
+######################################################################
+
+# Palier 1 - L'Anneau Mineur
+mumakan_minor_ring_template = {
+	can_equip = { always = yes }
+	can_benefit = { always = yes }
+	can_reforge = { always = no }
+	fallback = {
+		monthly_prestige = 0.25
+	}
+	ai_score = { value = 100 }
+	unique = yes
+}
+
+# Palier 2 Outcome A - Le Chef-d'Oeuvre Imparfait (Elven-tier)
+mumakan_elven_ring_template = {
+	can_equip = { always = yes }
+	can_benefit = { always = yes }
+	can_reforge = { always = no }
+	fallback = {
+		monthly_prestige = 0.5
+	}
+	ai_score = { value = 150 }
+	unique = yes
+}
+
+# Palier 2 Outcome B - L'Akhash-Mumak Eveille (the Unique)
+mumakan_master_ring_template = {
+	can_equip = { always = yes }
+	can_benefit = { always = yes }
+	can_reforge = { always = no }
+	fallback = {
+		monthly_prestige = 1
+	}
+	ai_score = { value = 500 }
+	unique = yes
+}
+
+# Palier 3 - Anneau de Loyaute (held by ring-bound vassals)
+mumakan_loyalty_ring_template = {
+	can_equip = { always = yes }
+	can_benefit = { always = yes }
+	can_reforge = { always = no }
+	fallback = {
+		monthly_prestige = 0.25
+	}
+	ai_score = { value = 100 }
+	unique = yes
+}
