@@ -17,19 +17,19 @@ mumakan_forges_maitresses_01 = {
 	type_icon = "icon_building_hall_of_heroes.dds"
 	effect_desc = mumakan_forges_maitresses_effect_desc
 
+	# Mumakan/Mumakil cultures all share the heritage_group_mumakani parameter
+	# (set by heritage_mumakani, heritage_magri, ...), exactly how RoE gates the
+	# war_mumak innovation. Black Numenoreans qualify via heritage_southern_adunaic.
+	# "Feudal or Clan" is enforced by building_requirement_tribal = no (these
+	# cultures are tribal/clan/feudal only). No county.holder block here - that
+	# does not resolve in can_construct_potential and was hiding the building.
 	can_construct_potential = {
 		building_requirement_castle_city_church = { LEVEL = 01 }
 		building_requirement_tribal = no
 		culture = {
 			OR = {
-				has_cultural_pillar = heritage_mumakani
+				has_cultural_parameter = heritage_group_mumakani
 				has_cultural_pillar = heritage_southern_adunaic
-			}
-		}
-		county.holder = {
-			OR = {
-				government = feudal_government
-				government = clan_government
 			}
 		}
 	}
@@ -39,7 +39,7 @@ mumakan_forges_maitresses_01 = {
 		building_requirement_tribal = no
 		culture = {
 			OR = {
-				has_cultural_pillar = heritage_mumakani
+				has_cultural_parameter = heritage_group_mumakani
 				has_cultural_pillar = heritage_southern_adunaic
 			}
 		}

@@ -12,7 +12,8 @@ mumakan_eligible_ruler_trigger = {
 	is_adult = yes
 	is_independent_ruler = yes
 	OR = {
-		culture = { has_cultural_pillar = heritage_mumakani }
+		# heritage_group_mumakani covers all Mumakan/Mumakil cultures (akanali, magrin, ...)
+		culture = { has_cultural_parameter = heritage_group_mumakani }
 		culture = { has_cultural_pillar = heritage_southern_adunaic }
 	}
 	OR = {
