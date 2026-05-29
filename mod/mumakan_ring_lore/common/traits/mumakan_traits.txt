@@ -1,0 +1,46 @@
+######################################################################
+# Mumakan Ring-Lore & Shadow Sovereignty - Custom Traits
+# Icons reuse vanilla trait icons so the mod ships zero new textures.
+# "Inheritance" of loyalty_to_the_ring / will_of_the_ring is handled in
+# common/on_action/mumakan_on_actions.txt (reliable for bestowed traits).
+######################################################################
+
+# Serviteur de l'Anneau - given to vassals who accept a Ring of Loyalty.
+loyalty_to_the_ring = {
+	icon = zealous.dds
+	ruler_designer_cost = 0
+
+	prowess = 5
+	learning = 2
+
+	# Marks the bearer; AI compliance + faction immunity enforced via on_action.
+	flag = mumakan_ringbound_trait
+}
+
+# Volonte de l'Akhash-Mumak - transmitted to the primary heir of the Master Ring.
+will_of_the_ring = {
+	icon = ambitious.dds
+	ruler_designer_cost = 0
+
+	martial = 3
+	intrigue = 3
+
+	dread_gain_mult = 0.15
+	general_opinion = -10
+	stress_gain_mult = 0.10
+
+	flag = mumakan_will_trait
+}
+
+# Hidden-flavour immortality trait granted alongside ring-bound status and to
+# the awakened bearer. immortal = yes stops aging / death from old age.
+mumakan_ringbound_immortal = {
+	icon = immortal.dds
+	ruler_designer_cost = 0
+
+	immortal = yes
+	no_prowess_loss_from_age = yes
+	long_reign_bonus_mult = -1000
+
+	flag = mumakan_immortal_trait
+}
