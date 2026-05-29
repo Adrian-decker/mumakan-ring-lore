@@ -1,8 +1,10 @@
 ﻿l_french:
 
  #### Bâtiment - Forges Maîtresses de Mûmakan ####
- mumakan_forges_maitresses_01:0 "Forges Maîtresses de Mûmakan"
- mumakan_forges_maitresses_01_desc:0 "Un colossal complexe de forges du sud mûmakan. Ses fourneaux trempent les plaques de guerre des grandes légions de pachydermes et abritent la métallurgie secrète qui rend possible la forge des Anneaux. Indispensable pour débloquer les décisions du Savoir des Anneaux."
+ building_type_mumakan_forges_maitresses_01:0 "Forges Maîtresses de Mûmakan"
+ building_type_mumakan_forges_maitresses_01_desc:0 "Un colossal complexe de forges du sud mûmakan. Ses fourneaux trempent les plaques de guerre des grandes légions de pachydermes et abritent la métallurgie secrète qui rend possible la forge des Anneaux. Indispensable pour débloquer les décisions du Savoir des Anneaux."
+ building_mumakan_forges_maitresses_01:0 "Maîtres Forgerons de Mûmakan"
+ building_mumakan_forges_maitresses_01_desc:0 "Le cœur de forge du complexe, où les métallurgistes du sud pratiquent le Savoir secret des Anneaux."
  mumakan_forges_maitresses_effect_desc:0 "Cœur de l'industrialisation pachyderme et du Savoir des Anneaux. Débloque #Y Plonger dans le Savoir des Anneaux#!."
 
  #### Décision - Palier 1 ####

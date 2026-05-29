@@ -1,8 +1,10 @@
 ﻿l_english:
 
  #### Building - Forges Maitresses de Mumakan ####
- mumakan_forges_maitresses_01:0 "Forges Maîtresses de Mûmakan"
- mumakan_forges_maitresses_01_desc:0 "A colossal industrial forge-complex of the Mûmakan south. Its furnaces temper the war-plate of the great pachyderm legions and house the secret metallurgy that makes the forging of Rings possible. Required to unlock the Ring-Lore decisions."
+ building_type_mumakan_forges_maitresses_01:0 "Forges Maîtresses de Mûmakan"
+ building_type_mumakan_forges_maitresses_01_desc:0 "A colossal industrial forge-complex of the Mûmakan south. Its furnaces temper the war-plate of the great pachyderm legions and house the secret metallurgy that makes the forging of Rings possible. Required to unlock the Ring-Lore decisions."
+ building_mumakan_forges_maitresses_01:0 "Maîtres Forgerons de Mûmakan"
+ building_mumakan_forges_maitresses_01_desc:0 "The master forge-works at the heart of the complex, where the metallurgists of the south practise the secret Ring-Lore."
  mumakan_forges_maitresses_effect_desc:0 "Hub of Pachyderm Industrialisation and Ring-Lore. Unlocks #Y Plonger dans le Savoir des Anneaux#!."
 
  #### Decision - Palier 1 ####
