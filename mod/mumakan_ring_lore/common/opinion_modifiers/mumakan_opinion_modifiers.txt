@@ -1,0 +1,9 @@
+######################################################################
+# Mumakan Ring-Lore & Shadow Sovereignty - Opinion Modifiers
+######################################################################
+
+# +100 opinion of the liege, locked in by the Ring of Loyalty.
+# No decay / no timeout specified -> permanent until explicitly removed.
+mumakan_ring_of_loyalty_opinion = {
+	opinion = 100
+}

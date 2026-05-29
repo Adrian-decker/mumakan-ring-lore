@@ -1,0 +1,50 @@
+######################################################################
+# Mumakan Ring-Lore & Shadow Sovereignty - Static Modifiers
+# These are referenced by the ring artifacts (modifier = ...) and by
+# add_character_modifier effects. Only confirmed modifier keys are used.
+######################################################################
+
+# Palier 1 - L'Anneau Mineur (applied while the ring is owned/equipped)
+mumakan_minor_ring_modifier = {
+	martial = 2
+	vassal_opinion = 5
+	knight_effectiveness_mult = 0.05
+}
+
+# Palier 2 Outcome A - Le Chef-d'Oeuvre Imparfait (Elven-tier ring)
+# Upside only here; the downside ("Sauron's agents subvert your court") is
+# delivered as live Mordor schemes via events for zero-error safety.
+# To also apply a raw scheme-resistance penalty, confirm the key in your build
+# and add e.g.  hostile_scheme_resistance_add = -50  here.
+mumakan_elven_ring_modifier = {
+	learning = 5
+	intrigue = 5
+	monthly_dynasty_prestige = 1
+}
+
+# Palier 2 Outcome B - L'Akhash-Mumak Eveille (the awakened Unique)
+mumakan_master_ring_modifier = {
+	martial = 10
+	prowess = 10
+	intrigue = 5
+	health = 5
+	fertility = 0.5
+}
+
+# Applied to the awakened bearer to pin Dread at 100 (Suprematie Absolue).
+# dread_baseline_add raises the resting dread level; combined with add_dread = 100
+# in the forge effect, dread is effectively locked at maximum.
+mumakan_awakened_dread_modifier = {
+	dread_baseline_add = 100
+}
+
+# Palier 3 - Anneau de Loyaute (cosmetic ring; the real effects live on the
+# loyalty_to_the_ring trait + the +100 opinion modifier).
+mumakan_loyalty_ring_modifier = {
+	prowess = 2
+}
+
+# Applied to ring-bound servants: +30% Fertility Boost (Statut de Serviteur Immortel).
+mumakan_ringbound_servant_modifier = {
+	fertility = 0.3
+}

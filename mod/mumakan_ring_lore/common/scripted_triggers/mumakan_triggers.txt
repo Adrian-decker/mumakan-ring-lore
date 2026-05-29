@@ -1,0 +1,65 @@
+######################################################################
+# Mumakan Ring-Lore & Shadow Sovereignty - Scripted Triggers
+# All triggers are character-scoped unless noted.
+# Depends on RoE-defined ids (heritage_mumakani, etc.) - RoE must be active.
+######################################################################
+
+# Is this ruler eligible to walk the path of Shadow / Ring-Lore?
+# Mumakan (Mumakil) heritage OR Black Numenorean (Southern Adunai) heritage.
+# Extendable: add further OR culture pillars here if you want more cultures eligible.
+mumakan_eligible_ruler_trigger = {
+	is_landed = yes
+	is_adult = yes
+	is_independent_ruler = yes
+	OR = {
+		culture = { has_cultural_pillar = heritage_mumakani }
+		culture = { has_cultural_pillar = heritage_southern_adunaic }
+	}
+	OR = {
+		government = feudal_government
+		government = clan_government
+	}
+}
+
+# Does the ruler own a holding with the Forges Maitresses de Mumakan?
+mumakan_has_forge_building_trigger = {
+	any_directly_owned_province = {
+		has_building_or_higher = mumakan_forges_maitresses_01
+	}
+}
+
+# Can the ruler launch Palier 1 (forge the Minor Ring)?
+mumakan_can_forge_minor_ring_trigger = {
+	mumakan_eligible_ruler_trigger = yes
+	mumakan_has_forge_building_trigger = yes
+	NOT = { has_character_flag = has_forged_minor_ring }
+}
+
+# Can the ruler launch Palier 2 (forge the Master Ring)?
+mumakan_can_forge_master_ring_trigger = {
+	mumakan_eligible_ruler_trigger = yes
+	has_character_flag = has_forged_minor_ring
+	NOT = { has_character_flag = has_forged_master_ring }
+}
+
+# Can the ruler launch Palier 3 (gift a Ring of Loyalty)?
+# Hard cap of 16 enforced via the per-bearer variable mumakan_loyalty_rings_forged.
+mumakan_can_forge_loyalty_ring_trigger = {
+	has_character_flag = has_forged_master_ring
+	OR = {
+		NOT = { has_variable = mumakan_loyalty_rings_forged }
+		var:mumakan_loyalty_rings_forged < 16
+	}
+}
+
+# Is the target a valid recipient for a Ring of Loyalty?
+# (used in character_interaction scope:recipient against scope:actor)
+mumakan_valid_loyalty_ring_target_trigger = {
+	is_landed = yes
+	is_adult = yes
+	is_alive = yes
+	NOT = { has_trait = loyalty_to_the_ring }
+	tier >= tier_duchy
+	# Must be an internal vassal of the actor (direct or indirect).
+	is_vassal_or_below_of = scope:actor
+}

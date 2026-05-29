@@ -1,0 +1,31 @@
+######################################################################
+# Mumakan Ring-Lore & Shadow Sovereignty - Script Values (costs)
+# Centralised so the client can re-balance in one place.
+######################################################################
+
+# Palier 1 - L'Anneau Mineur
+mumakan_minor_ring_piety_cost = 20000
+mumakan_minor_ring_gold_cost  = 5000
+
+# Palier 2 - L'Anneau Maitre (Akhash-Mumak). Costs 100000 piety OR 100000 prestige.
+mumakan_master_ring_piety_cost    = 100000
+mumakan_master_ring_prestige_cost = 100000
+
+# Palier 3 - Anneaux de Loyaute. Base 40000 piety; -20% with legacy tier 3 (Protocoles d'Assujettissement).
+mumakan_loyalty_ring_piety_cost = {
+	value = 40000
+	if = {
+		limit = {
+			dynasty ?= { has_dynasty_perk = mumakan_anneaux_legacy_3 }
+		}
+		multiply = 0.8
+	}
+}
+
+# Monthly tribute fraction (legacy tier 5 - Tribut des Sans-Ame): 5% of the vassal's current treasury.
+mumakan_tribute_amount = {
+	value = gold
+	multiply = 0.05
+	# never tribute a negative treasury
+	min = 0
+}
