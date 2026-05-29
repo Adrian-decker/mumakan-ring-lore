@@ -2,6 +2,11 @@
 # Mumakan Ring-Lore & Shadow Sovereignty - Decisions
 # Player-only (is_ai = no + ai_will_do base 0) to preserve balance and keep AI
 # logic clean for multiplayer stability. Title loc key = decision id.
+#
+# Design note: requirements live in is_valid (not is_shown) so an eligible
+# Mumakan/Black-Numenorean ruler ALWAYS sees the decision, greyed-out with the
+# unmet requirement (independent / feudal-or-clan / Forges built) shown - clearer
+# UX and avoids the decision silently disappearing.
 ######################################################################
 
 ##### PALIER 1 - Plonger dans le Savoir des Anneaux (forge the Minor Ring) #####
@@ -15,14 +20,23 @@ mumakan_decision_minor_ring = {
 
 	is_shown = {
 		is_ai = no
-		mumakan_eligible_ruler_trigger = yes
-		mumakan_has_forge_building_trigger = yes
+		culture = {
+			OR = {
+				has_cultural_parameter = heritage_group_mumakani
+				has_cultural_pillar = heritage_southern_adunaic
+			}
+		}
 		NOT = { has_character_flag = has_forged_minor_ring }
 	}
 
 	is_valid = {
-		mumakan_can_forge_minor_ring_trigger = yes
 		is_incapable = no
+		is_independent_ruler = yes
+		OR = {
+			government = feudal_government
+			government = clan_government
+		}
+		mumakan_has_forge_building_trigger = yes
 	}
 
 	cost = {
@@ -49,14 +63,23 @@ mumakan_decision_master_ring_piety = {
 
 	is_shown = {
 		is_ai = no
-		mumakan_eligible_ruler_trigger = yes
+		culture = {
+			OR = {
+				has_cultural_parameter = heritage_group_mumakani
+				has_cultural_pillar = heritage_southern_adunaic
+			}
+		}
 		has_character_flag = has_forged_minor_ring
 		NOT = { has_character_flag = has_forged_master_ring }
 	}
 
 	is_valid = {
-		mumakan_can_forge_master_ring_trigger = yes
 		is_incapable = no
+		is_independent_ruler = yes
+		OR = {
+			government = feudal_government
+			government = clan_government
+		}
 	}
 
 	cost = {
@@ -82,14 +105,23 @@ mumakan_decision_master_ring_prestige = {
 
 	is_shown = {
 		is_ai = no
-		mumakan_eligible_ruler_trigger = yes
+		culture = {
+			OR = {
+				has_cultural_parameter = heritage_group_mumakani
+				has_cultural_pillar = heritage_southern_adunaic
+			}
+		}
 		has_character_flag = has_forged_minor_ring
 		NOT = { has_character_flag = has_forged_master_ring }
 	}
 
 	is_valid = {
-		mumakan_can_forge_master_ring_trigger = yes
 		is_incapable = no
+		is_independent_ruler = yes
+		OR = {
+			government = feudal_government
+			government = clan_government
+		}
 	}
 
 	cost = {
