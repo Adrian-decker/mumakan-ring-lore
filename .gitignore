@@ -1,0 +1,11 @@
+# OS / editor cruft
+Thumbs.db
+desktop.ini
+.DS_Store
+*.swp
+*~
+
+# CK3 local test artifacts (do not commit logs / saves)
+*.log
+*.ck3
+logs/
