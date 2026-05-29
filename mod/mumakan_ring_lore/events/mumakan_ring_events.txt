@@ -1,0 +1,138 @@
+######################################################################
+# Mumakan Ring-Lore & Shadow Sovereignty - Events
+# Palier 2 RNG outcome, Mordor subversion pressure, and the monthly tribute
+# scheduler (no native monthly pulse exists, so the bearer self-schedules it).
+######################################################################
+
+namespace = mumakan_ring
+
+##### Palier 2 RNG roll (hidden): 40% imperfect, 60% awakened #####
+mumakan_ring.0001 = {
+	type = character_event
+	hidden = yes
+
+	immediate = {
+		random_list = {
+			40 = { trigger_event = mumakan_ring.0002 }
+			60 = { trigger_event = mumakan_ring.0003 }
+		}
+	}
+}
+
+##### Outcome A - Le Chef-d'Oeuvre Imparfait (Elven-tier ring) #####
+mumakan_ring.0002 = {
+	type = character_event
+	title = mumakan_ring.0002.t
+	desc = mumakan_ring.0002.desc
+
+	left_portrait = {
+		character = root
+		animation = worry
+	}
+
+	immediate = {
+		mumakan_master_ring_imperfect_effect = yes
+	}
+
+	option = {
+		name = mumakan_ring.0002.a
+	}
+}
+
+##### Outcome B - L'Akhash-Mumak Eveille (the awakened Unique) #####
+mumakan_ring.0003 = {
+	type = character_event
+	title = mumakan_ring.0003.t
+	desc = mumakan_ring.0003.desc
+
+	left_portrait = {
+		character = root
+		animation = ecstasy
+	}
+
+	immediate = {
+		mumakan_master_ring_awakened_effect = yes
+	}
+
+	option = {
+		name = mumakan_ring.0003.a
+	}
+}
+
+##### Mordor subversion pressure (recurring while the imperfect ring is held) #####
+mumakan_ring.0010 = {
+	type = character_event
+	title = mumakan_ring.0010.t
+	desc = mumakan_ring.0010.desc
+
+	left_portrait = {
+		character = root
+		animation = paranoia
+	}
+
+	trigger = {
+		is_alive = yes
+		has_character_flag = mumakan_master_ring_imperfect
+	}
+
+	immediate = {
+		add_stress = 20
+	}
+
+	option = {
+		name = mumakan_ring.0010.a
+	}
+
+	after = {
+		# Sauron never relents while the flawed ring exists.
+		if = {
+			limit = {
+				is_alive = yes
+				has_character_flag = mumakan_master_ring_imperfect
+			}
+			trigger_event = { id = mumakan_ring.0010 days = 1825 } # ~5 years
+		}
+	}
+}
+
+##### Monthly tribute collector (Tribut des Sans-Ame, legacy tier 5) #####
+# Self-scheduling; runs on the Master Ring bearer. Only transfers if the
+# dynasty has unlocked legacy tier 5.
+mumakan_ring.0020 = {
+	type = character_event
+	hidden = yes
+
+	trigger = {
+		is_alive = yes
+		has_character_flag = mumakan_is_master_ring_bearer
+	}
+
+	immediate = {
+		if = {
+			limit = { dynasty ?= { has_dynasty_perk = mumakan_anneaux_legacy_5 } }
+			every_vassal_or_below = {
+				limit = {
+					has_character_flag = mumakan_ringbound_servant
+					is_alive = yes
+					gold >= 1
+				}
+				save_scope_value_as = { name = mumakan_trib value = mumakan_tribute_amount }
+				add_gold = {
+					value = mumakan_tribute_amount
+					multiply = -1
+				}
+				root = { add_gold = scope:mumakan_trib }
+			}
+		}
+	}
+
+	after = {
+		if = {
+			limit = {
+				is_alive = yes
+				has_character_flag = mumakan_is_master_ring_bearer
+			}
+			trigger_event = { id = mumakan_ring.0020 days = 30 }
+		}
+	}
+}
