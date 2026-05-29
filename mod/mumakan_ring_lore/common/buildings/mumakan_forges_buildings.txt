@@ -1,0 +1,68 @@
+######################################################################
+# Mumakan Ring-Lore & Shadow Sovereignty - Duchy Building
+# Forges Maitresses de Mumakan. Modelled on RoE's own duchy_capital buildings
+# (town_hole_hobbit) so scoping matches the live game exactly.
+# Single-level building (flagged fully upgraded), restricted to Mumakan /
+# Black Numenorean Feudal-or-Clan capitals. Reuses an existing RoE icon.
+#
+# NOTE: the design's "-20% artifact creation time" stat is intentionally omitted
+# because no artifact-creation-time character modifier key could be confirmed in
+# the live files; add it here once verified in your build if desired.
+######################################################################
+
+mumakan_forges_maitresses_01 = {
+	construction_time = slow_construction_time
+	cost_gold = 800
+	cost_prestige = 300
+	type_icon = "icon_building_hall_of_heroes.dds"
+	effect_desc = mumakan_forges_maitresses_effect_desc
+
+	can_construct_potential = {
+		building_requirement_castle_city_church = { LEVEL = 01 }
+		building_requirement_tribal = no
+		culture = {
+			OR = {
+				has_cultural_pillar = heritage_mumakani
+				has_cultural_pillar = heritage_southern_adunaic
+			}
+		}
+		county.holder = {
+			OR = {
+				government = feudal_government
+				government = clan_government
+			}
+		}
+	}
+
+	is_enabled = {
+		county.holder = { has_title = prev.duchy }
+		building_requirement_tribal = no
+		culture = {
+			OR = {
+				has_cultural_pillar = heritage_mumakani
+				has_cultural_pillar = heritage_southern_adunaic
+			}
+		}
+	}
+	show_disabled = yes
+
+	character_modifier = {
+		# Degats / Robustesse des Hommes d'Armes Mumakil (RoE buffs war_mumak via the elephant_cavalry base type)
+		elephant_cavalry_damage_mult = 0.30
+		elephant_cavalry_toughness_mult = 0.30
+		# Piete et Prestige mensuels +10%
+		monthly_piety_gain_mult = 0.10
+		monthly_prestige_gain_mult = 0.10
+	}
+
+	type = duchy_capital
+	flag = fully_upgraded_duchy_capital_building
+
+	ai_value = {
+		base = 30
+		modifier = {
+			factor = 2
+			scope:holder.capital_province = this
+		}
+	}
+}
