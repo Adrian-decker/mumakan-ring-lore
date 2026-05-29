@@ -1,0 +1,105 @@
+######################################################################
+# Mumakan Ring-Lore & Shadow Sovereignty - Dynasty Perks
+# Track: mumakan_anneaux_legacy_track (La Volonte des Anneaux), 5 tiers.
+# Defined in tier order; each tier's can_be_picked requires the previous tier
+# (strict hierarchy). Tier 3 (cost reduction) and tier 5 (tribute) are wired to
+# script: see mumakan_loyalty_ring_piety_cost and event mumakan_ring.0020.
+######################################################################
+
+# Tier 1 - Maitrise du Savoir des Anneaux
+mumakan_anneaux_legacy_1 = {
+	legacy = mumakan_anneaux_legacy_track
+
+	can_be_picked = {
+		dynasty = {
+			OR = {
+				has_variable = mumakan_anneaux_unlocked
+				has_dynasty_perk = mumakan_anneaux_legacy_1
+			}
+		}
+	}
+
+	character_modifier = {
+		name = mumakan_anneaux_legacy_1_modifier
+		fertility = 0.05
+	}
+
+	ai_chance = { value = 50 }
+}
+
+# Tier 2 - Majeste Absolue
+mumakan_anneaux_legacy_2 = {
+	legacy = mumakan_anneaux_legacy_track
+
+	can_be_picked = {
+		dynasty = { has_dynasty_perk = mumakan_anneaux_legacy_1 }
+	}
+
+	character_modifier = {
+		name = mumakan_anneaux_legacy_2_modifier
+		dread_baseline_add = 10
+	}
+
+	ai_chance = { value = 50 }
+}
+
+# Tier 3 - Protocoles d'Assujettissement (-20% piety cost for Rings of Loyalty)
+mumakan_anneaux_legacy_3 = {
+	legacy = mumakan_anneaux_legacy_track
+
+	can_be_picked = {
+		dynasty = { has_dynasty_perk = mumakan_anneaux_legacy_2 }
+	}
+
+	character_modifier = {
+		name = mumakan_anneaux_legacy_3_modifier
+		monthly_piety = 0.5
+	}
+
+	effect = {
+		custom_description_no_bullet = { text = mumakan_anneaux_legacy_3_effect }
+	}
+
+	ai_chance = { value = 50 }
+}
+
+# Tier 4 - Garde des Serviteurs
+mumakan_anneaux_legacy_4 = {
+	legacy = mumakan_anneaux_legacy_track
+
+	can_be_picked = {
+		dynasty = { has_dynasty_perk = mumakan_anneaux_legacy_3 }
+	}
+
+	character_modifier = {
+		name = mumakan_anneaux_legacy_4_modifier
+		prowess = 2
+		advantage = 5
+	}
+
+	effect = {
+		custom_description_no_bullet = { text = mumakan_anneaux_legacy_4_effect }
+	}
+
+	ai_chance = { value = 50 }
+}
+
+# Tier 5 - Tribut des Sans-Ame (5% monthly gold tribute from ring-bound vassals)
+mumakan_anneaux_legacy_5 = {
+	legacy = mumakan_anneaux_legacy_track
+
+	can_be_picked = {
+		dynasty = { has_dynasty_perk = mumakan_anneaux_legacy_4 }
+	}
+
+	character_modifier = {
+		name = mumakan_anneaux_legacy_5_modifier
+		monthly_prestige = 1
+	}
+
+	effect = {
+		custom_description_no_bullet = { text = mumakan_anneaux_legacy_5_effect }
+	}
+
+	ai_chance = { value = 50 }
+}
