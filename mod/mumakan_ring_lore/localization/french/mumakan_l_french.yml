@@ -1,0 +1,77 @@
+﻿l_french:
+
+ #### Bâtiment - Forges Maîtresses de Mûmakan ####
+ mumakan_forges_maitresses_01:0 "Forges Maîtresses de Mûmakan"
+ mumakan_forges_maitresses_01_desc:0 "Un colossal complexe de forges du sud mûmakan. Ses fourneaux trempent les plaques de guerre des grandes légions de pachydermes et abritent la métallurgie secrète qui rend possible la forge des Anneaux. Indispensable pour débloquer les décisions du Savoir des Anneaux."
+ mumakan_forges_maitresses_effect_desc:0 "Cœur de l'industrialisation pachyderme et du Savoir des Anneaux. Débloque #Y Plonger dans le Savoir des Anneaux#!."
+
+ #### Décision - Palier 1 ####
+ mumakan_decision_minor_ring:0 "Plonger dans le Savoir des Anneaux"
+ mumakan_decision_minor_ring_desc:0 "Plongez dans le Savoir interdit des Anneaux de Mûmakan et forgez #Y L'Anneau Mineur#! — la clef fondatrice de la voie de l'Ombre.\n\nCela fait apparaître un artéfact physique (#Y L'Anneau Mineur#!) dans votre inventaire et accorde : #G +2 Martialité#!, #G +5 Opinion des vassaux#!, #G +5% d'Efficacité des chevaliers#! tant qu'il est porté. Cela éveille aussi l'héritage dynastique #Y La Volonté des Anneaux#! et ouvre la voie vers #Y L'Anneau Maître#!."
+ mumakan_decision_minor_ring_tooltip:0 "Forger l'Anneau Mineur (nécessite les Forges Maîtresses de Mûmakan dans une de vos possessions)."
+ mumakan_decision_minor_ring_confirm:0 "Que la forge commence."
+
+ #### Décision - Palier 2 ####
+ mumakan_decision_master_ring_piety:0 "Forger l'Anneau Maître (Piété)"
+ mumakan_decision_master_ring_prestige:0 "Forger l'Anneau Maître (Prestige)"
+ mumakan_decision_master_ring_desc:0 "Versez votre trésor de foi ou de renommée dans l'œuvre suprême : #Y L'Anneau Maître — Akhâsh-Mûmak#!.\n\nLe canalisation est périlleuse. Il y a #R 40%#! de chances d'obtenir un anneau elfique imparfait (#Y Le Chef-d'Œuvre Imparfait#!) qui attire le courroux de Sauron, et #G 60%#! de chances de réussite totale (#Y L'Akhâsh-Mûmak Éveillé#!) : 100 de Terreur verrouillée, santé immense, +50% de fertilité et des attributs écrasants."
+ mumakan_decision_master_ring_tooltip:0 "Forger l'Anneau Maître. À réaliser avant tout Anneau de Loyauté."
+ mumakan_decision_master_ring_confirm:0 "Éveiller l'Akhâsh-Mûmak."
+
+ #### Interaction - Palier 3 ####
+ mumakan_loyalty_ring_interaction:0 "Offrir un Anneau de Loyauté"
+ mumakan_loyalty_ring_interaction_desc:0 "Offrez l'un des #Y Anneaux de Loyauté#! à un puissant vassal interne (Duc ou plus). Il se convertit à votre Culte Sombre, devient un serviteur immortel dévoué, gagne une opinion verrouillée de #G +100#! envers vous, et ne pourra jamais lever de faction contre vous. Un maximum de #Y 16#! pourront être forgés."
+
+ #### Traits ####
+ loyalty_to_the_ring:0 "Serviteur de l'Anneau"
+ loyalty_to_the_ring_desc:0 "Cette âme est liée à un Anneau de Loyauté. Elle ne peut jamais créer, rejoindre ou soutenir une faction contre le porteur de l'Anneau Maître, et sert sans condition. Se transmet à l'héritier principal avec un poids total."
+ will_of_the_ring:0 "Volonté de l'Akhâsh-Mûmak"
+ will_of_the_ring_desc:0 "La volonté inflexible de l'Anneau Maître coule dans cette lignée — puissance martiale et terreur, au prix de l'arrogance, de la méfiance et d'une paranoïa rongeante. Transmise à l'héritier principal."
+ mumakan_ringbound_immortal:0 "Lié à l'Anneau"
+ mumakan_ringbound_immortal_desc:0 "Lié au pouvoir d'un Anneau, ce corps ne vieillit plus et ne peut mourir de vieillesse."
+
+ #### Artéfacts ####
+ mumakan_minor_ring_name:0 "L'Anneau Mineur"
+ mumakan_minor_ring_desc:0 "L'anneau fondateur du Savoir des Anneaux de Mûmakan. Un premier liage prudent de l'ombre dans le métal."
+ mumakan_elven_ring_name:0 "Anneau Elfique Imparfait"
+ mumakan_elven_ring_desc:0 "Une canalisation imparfaite de l'essence magique — un Anneau de Pouvoir de rang elfique dont la création n'est pas passée inaperçue à Barad-dûr."
+ mumakan_master_ring_name:0 "L'Akhâsh-Mûmak Éveillé"
+ mumakan_master_ring_desc:0 "L'Anneau Maître éveillé de Mûmakan. Une œuvre sans défaut de terreur et de domination, rayonnant d'une autorité absolue."
+ mumakan_loyalty_ring_name:0 "Anneau de Loyauté"
+ mumakan_loyalty_ring_desc:0 "L'un des seize Anneaux de Loyauté, liant son porteur corps et âme au maître de l'Akhâsh-Mûmak."
+
+ #### Notification ####
+ mumakan_minor_ring_toast:0 "L'Anneau Mineur a été forgé."
+
+ #### Événements ####
+ mumakan_ring.0002.t:0 "Le Chef-d'Œuvre Imparfait"
+ mumakan_ring.0002.desc:0 "L'essence vous résiste. L'anneau refroidit imparfait sur l'enclume — magnifique, puissant et #R défectueux#!. C'est un Anneau de Pouvoir de rang elfique, accordant un esprit vif et la ruse, mais sa création flamboie comme un phare pour l'Œil. Sauron sait désormais, et les agents du Mordor ne cesseront jamais de vouloir défaire votre cour."
+ mumakan_ring.0002.a:0 "Qu'il en soit ainsi. Qu'ils viennent."
+ mumakan_ring.0003.t:0 "L'Akhâsh-Mûmak Éveillé"
+ mumakan_ring.0003.desc:0 "Parfait. Le métal boit l'ombre et s'éveille. La Terreur se pose sur vous telle une couronne que nul ne pourra ôter — votre autorité est absolue, votre corps intemporel, votre lignée assurée. Vous devenez un souverain de l'Ombre à part entière, ne devant rien à aucun Seigneur Ténébreux."
+ mumakan_ring.0003.a:0 "L'ère de l'Akhâsh-Mûmak commence."
+ mumakan_ring.0010.t:0 "L'Œil se tourne vers le Sud"
+ mumakan_ring.0010.desc:0 "Des agents murmurants du Mordor se glissent dans votre cour, semant le doute et la peur. L'anneau imparfait que vous avez forgé est une épine que le Seigneur Ténébreux ne peut ignorer."
+ mumakan_ring.0010.a:0 "Qu'ils murmurent. J'endure."
+
+ #### Héritage dynastique - La Volonté des Anneaux ####
+ mumakan_anneaux_legacy_track:0 "La Volonté des Anneaux"
+ mumakan_anneaux_legacy_track_desc:0 "La maîtrise accumulée du Savoir des Anneaux dans votre maison, débloquée dès la forge de l'Anneau Mineur."
+ mumakan_anneaux_legacy_1:0 "Maîtrise du Savoir des Anneaux"
+ mumakan_anneaux_legacy_1_desc:0 "Une maîtrise approfondie du Savoir des Anneaux renforce la fertilité de la lignée porteuse d'anneaux."
+ mumakan_anneaux_legacy_1_modifier:0 "Maîtrise du Savoir des Anneaux"
+ mumakan_anneaux_legacy_2:0 "Majesté Absolue"
+ mumakan_anneaux_legacy_2_desc:0 "Votre terrible majesté est tissée dans la dynastie elle-même."
+ mumakan_anneaux_legacy_2_modifier:0 "Majesté Absolue"
+ mumakan_anneaux_legacy_3:0 "Protocoles d'Assujettissement"
+ mumakan_anneaux_legacy_3_desc:0 "Des rites d'assujettissement raffinés rendent les Anneaux de Loyauté moins coûteux à forger."
+ mumakan_anneaux_legacy_3_modifier:0 "Protocoles d'Assujettissement"
+ mumakan_anneaux_legacy_3_effect:0 "#G -20%#! de coût en Piété pour forger un Anneau de Loyauté."
+ mumakan_anneaux_legacy_4:0 "Garde des Serviteurs"
+ mumakan_anneaux_legacy_4_desc:0 "Les serviteurs liés aux anneaux de votre maison deviennent une garde sans pareille."
+ mumakan_anneaux_legacy_4_modifier:0 "Garde des Serviteurs"
+ mumakan_anneaux_legacy_4_effect:0 "Le porteur de l'Anneau Maître mène au combat avec la férocité des liés-à-l'anneau."
+ mumakan_anneaux_legacy_5:0 "Tribut des Sans-Âme"
+ mumakan_anneaux_legacy_5_desc:0 "Les serviteurs sans âme déversent leur richesse dans le trésor du maître."
+ mumakan_anneaux_legacy_5_modifier:0 "Tribut des Sans-Âme"
+ mumakan_anneaux_legacy_5_effect:0 "Les porteurs d'un Anneau de Loyauté transfèrent #G 5%#! de leur or chaque mois au porteur de l'Anneau Maître."

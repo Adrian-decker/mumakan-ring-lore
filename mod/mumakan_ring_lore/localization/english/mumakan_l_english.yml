@@ -1,0 +1,77 @@
+﻿l_english:
+
+ #### Building - Forges Maitresses de Mumakan ####
+ mumakan_forges_maitresses_01:0 "Forges Maîtresses de Mûmakan"
+ mumakan_forges_maitresses_01_desc:0 "A colossal industrial forge-complex of the Mûmakan south. Its furnaces temper the war-plate of the great pachyderm legions and house the secret metallurgy that makes the forging of Rings possible. Required to unlock the Ring-Lore decisions."
+ mumakan_forges_maitresses_effect_desc:0 "Hub of Pachyderm Industrialisation and Ring-Lore. Unlocks #Y Plonger dans le Savoir des Anneaux#!."
+
+ #### Decision - Palier 1 ####
+ mumakan_decision_minor_ring:0 "Plonger dans le Savoir des Anneaux"
+ mumakan_decision_minor_ring_desc:0 "Descend into the forbidden Ring-Lore of Mûmakan and forge #Y L'Anneau Mineur#! — the foundational key of the path of Shadow.\n\nThis spawns a physical artifact (#Y L'Anneau Mineur#!) into your inventory and grants: #G +2 Martial#!, #G +5 Vassal Opinion#!, #G +5% Knight Effectiveness#! while worn. It also awakens the dynasty legacy #Y La Volonté des Anneaux#! and opens the road to #Y L'Anneau Maître#!."
+ mumakan_decision_minor_ring_tooltip:0 "Forge the Minor Ring (requires the Forges Maîtresses de Mûmakan in a holding you own)."
+ mumakan_decision_minor_ring_confirm:0 "Let the forging begin."
+
+ #### Decision - Palier 2 ####
+ mumakan_decision_master_ring_piety:0 "Forger l'Anneau Maître (Piété)"
+ mumakan_decision_master_ring_prestige:0 "Forger l'Anneau Maître (Prestige)"
+ mumakan_decision_master_ring_desc:0 "Pour your treasury of faith or renown into the supreme working: #Y L'Anneau Maître — Akhâsh-Mûmak#!.\n\nThe channeling is perilous. There is a #R 40%#! chance of an imperfect Elven-tier ring (#Y Le Chef-d'Œuvre Imparfait#!) that draws Sauron's wrath, and a #G 60%#! chance of total success (#Y L'Akhâsh-Mûmak Éveillé#!): locked 100 Dread, immense health, +50% fertility, and overwhelming attributes."
+ mumakan_decision_master_ring_tooltip:0 "Forge the Master Ring. Must be done before any Ring of Loyalty."
+ mumakan_decision_master_ring_confirm:0 "Awaken the Akhâsh-Mûmak."
+
+ #### Interaction - Palier 3 ####
+ mumakan_loyalty_ring_interaction:0 "Offrir un Anneau de Loyauté"
+ mumakan_loyalty_ring_interaction_desc:0 "Gift one of the #Y Anneaux de Loyauté#! to a powerful internal vassal (Duke or higher). They convert to your Dark Cult, become a devoted immortal servant, gain a locked #G +100#! opinion of you, and can never raise a faction against you. A maximum of #Y 16#! may ever be forged."
+
+ #### Traits ####
+ loyalty_to_the_ring:0 "Serviteur de l'Anneau"
+ loyalty_to_the_ring_desc:0 "This soul is bound to a Ring of Loyalty. It can never create, join or support a faction against the bearer of the Master Ring, and serves unconditionally. Passes to the primary heir at full weight."
+ will_of_the_ring:0 "Volonté de l'Akhâsh-Mûmak"
+ will_of_the_ring_desc:0 "The unbending will of the Master Ring flows in this bloodline — martial might and terror, at the price of arrogance, distrust and gnawing paranoia. Transmitted to the primary heir."
+ mumakan_ringbound_immortal:0 "Lié à l'Anneau"
+ mumakan_ringbound_immortal_desc:0 "Bound to the power of a Ring, this body no longer ages and cannot die of old age."
+
+ #### Artifacts ####
+ mumakan_minor_ring_name:0 "L'Anneau Mineur"
+ mumakan_minor_ring_desc:0 "The foundational ring of the Mûmakan Ring-Lore. A first, careful binding of shadow into metal."
+ mumakan_elven_ring_name:0 "Anneau Elfique Imparfait"
+ mumakan_elven_ring_desc:0 "An imperfect channeling of magical essence — an Elven-tier Ring of Power whose making did not go unnoticed in Barad-dûr."
+ mumakan_master_ring_name:0 "L'Akhâsh-Mûmak Éveillé"
+ mumakan_master_ring_desc:0 "The awakened Master Ring of Mûmakan. A flawless working of dread and dominion, radiating absolute authority."
+ mumakan_loyalty_ring_name:0 "Anneau de Loyauté"
+ mumakan_loyalty_ring_desc:0 "One of the sixteen Rings of Loyalty, binding its bearer body and soul to the master of the Akhâsh-Mûmak."
+
+ #### Toast ####
+ mumakan_minor_ring_toast:0 "L'Anneau Mineur has been forged."
+
+ #### Events ####
+ mumakan_ring.0002.t:0 "Le Chef-d'Œuvre Imparfait"
+ mumakan_ring.0002.desc:0 "The essence resists you. The ring cools imperfect upon the anvil — beautiful, potent, and #R flawed#!. It is an Elven-tier Ring of Power, granting keen wit and cunning, but its making blazes like a beacon to the Eye. Sauron now knows, and the agents of Mordor will not rest until your court is unmade."
+ mumakan_ring.0002.a:0 "So be it. Let them come."
+ mumakan_ring.0003.t:0 "L'Akhâsh-Mûmak Éveillé"
+ mumakan_ring.0003.desc:0 "Flawless. The metal drinks the shadow and wakes. Dread settles upon you like a crown that can never be removed — your authority is absolute, your body ageless, your line assured. You are become a sovereign of Shadow in your own right, beholden to no Dark Lord."
+ mumakan_ring.0003.a:0 "The age of the Akhâsh-Mûmak begins."
+ mumakan_ring.0010.t:0 "The Eye Turns South"
+ mumakan_ring.0010.desc:0 "Whispering agents of Mordor slip through your court, sowing doubt and fear. The flawed ring you forged is a thorn the Dark Lord cannot ignore."
+ mumakan_ring.0010.a:0 "Let them whisper. I endure."
+
+ #### Dynasty Legacy - La Volonte des Anneaux ####
+ mumakan_anneaux_legacy_track:0 "La Volonté des Anneaux"
+ mumakan_anneaux_legacy_track_desc:0 "The accumulated mastery of Ring-Lore in your house, unlocked once the Minor Ring is forged."
+ mumakan_anneaux_legacy_1:0 "Maîtrise du Savoir des Anneaux"
+ mumakan_anneaux_legacy_1_desc:0 "Deepening command of Ring-Lore strengthens the fertility of the ring-bearing line."
+ mumakan_anneaux_legacy_1_modifier:0 "Maîtrise du Savoir des Anneaux"
+ mumakan_anneaux_legacy_2:0 "Majesté Absolue"
+ mumakan_anneaux_legacy_2_desc:0 "Your terrible majesty is woven into the dynasty itself."
+ mumakan_anneaux_legacy_2_modifier:0 "Majesté Absolue"
+ mumakan_anneaux_legacy_3:0 "Protocoles d'Assujettissement"
+ mumakan_anneaux_legacy_3_desc:0 "Refined rites of subjugation make the Rings of Loyalty cheaper to forge."
+ mumakan_anneaux_legacy_3_modifier:0 "Protocoles d'Assujettissement"
+ mumakan_anneaux_legacy_3_effect:0 "#G -20%#! Piety cost to forge a Ring of Loyalty."
+ mumakan_anneaux_legacy_4:0 "Garde des Serviteurs"
+ mumakan_anneaux_legacy_4_desc:0 "The ring-bound servants of your house become a peerless guard."
+ mumakan_anneaux_legacy_4_modifier:0 "Garde des Serviteurs"
+ mumakan_anneaux_legacy_4_effect:0 "The Master Ring bearer leads with the ferocity of the ring-bound."
+ mumakan_anneaux_legacy_5:0 "Tribut des Sans-Âme"
+ mumakan_anneaux_legacy_5_desc:0 "The soulless servants pour their wealth into the master's treasury."
+ mumakan_anneaux_legacy_5_modifier:0 "Tribut des Sans-Âme"
+ mumakan_anneaux_legacy_5_effect:0 "Holders of a Ring of Loyalty transfer #G 5%#! of their gold each month to the Master Ring bearer."
