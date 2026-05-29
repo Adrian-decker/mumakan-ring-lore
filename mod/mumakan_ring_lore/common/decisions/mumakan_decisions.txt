@@ -1,0 +1,102 @@
+######################################################################
+# Mumakan Ring-Lore & Shadow Sovereignty - Decisions
+# Player-only (is_ai = no + ai_will_do base 0) to preserve balance and keep AI
+# logic clean for multiplayer stability. Title loc key = decision id.
+######################################################################
+
+##### PALIER 1 - Plonger dans le Savoir des Anneaux (forge the Minor Ring) #####
+mumakan_decision_minor_ring = {
+	ai_check_interval = 0
+	title = mumakan_decision_minor_ring
+	desc = mumakan_decision_minor_ring_desc
+	selection_tooltip = mumakan_decision_minor_ring_tooltip
+	confirm_text = mumakan_decision_minor_ring_confirm
+
+	is_shown = {
+		is_ai = no
+		mumakan_eligible_ruler_trigger = yes
+		mumakan_has_forge_building_trigger = yes
+		NOT = { has_character_flag = has_forged_minor_ring }
+	}
+
+	is_valid = {
+		mumakan_can_forge_minor_ring_trigger = yes
+		is_incapable = no
+	}
+
+	cost = {
+		piety = mumakan_minor_ring_piety_cost
+		gold = mumakan_minor_ring_gold_cost
+	}
+
+	effect = {
+		mumakan_forge_minor_ring_effect = yes
+	}
+
+	ai_potential = { always = no }
+	ai_will_do = { base = 0 }
+}
+
+##### PALIER 2 - Forger l'Anneau Maitre (via Piety) #####
+mumakan_decision_master_ring_piety = {
+	ai_check_interval = 0
+	title = mumakan_decision_master_ring_piety
+	desc = mumakan_decision_master_ring_desc
+	selection_tooltip = mumakan_decision_master_ring_tooltip
+	confirm_text = mumakan_decision_master_ring_confirm
+
+	is_shown = {
+		is_ai = no
+		mumakan_eligible_ruler_trigger = yes
+		has_character_flag = has_forged_minor_ring
+		NOT = { has_character_flag = has_forged_master_ring }
+	}
+
+	is_valid = {
+		mumakan_can_forge_master_ring_trigger = yes
+		is_incapable = no
+	}
+
+	cost = {
+		piety = mumakan_master_ring_piety_cost
+	}
+
+	effect = {
+		mumakan_forge_master_ring_effect = yes
+	}
+
+	ai_potential = { always = no }
+	ai_will_do = { base = 0 }
+}
+
+##### PALIER 2 - Forger l'Anneau Maitre (via Prestige) #####
+mumakan_decision_master_ring_prestige = {
+	ai_check_interval = 0
+	title = mumakan_decision_master_ring_prestige
+	desc = mumakan_decision_master_ring_desc
+	selection_tooltip = mumakan_decision_master_ring_tooltip
+	confirm_text = mumakan_decision_master_ring_confirm
+
+	is_shown = {
+		is_ai = no
+		mumakan_eligible_ruler_trigger = yes
+		has_character_flag = has_forged_minor_ring
+		NOT = { has_character_flag = has_forged_master_ring }
+	}
+
+	is_valid = {
+		mumakan_can_forge_master_ring_trigger = yes
+		is_incapable = no
+	}
+
+	cost = {
+		prestige = mumakan_master_ring_prestige_cost
+	}
+
+	effect = {
+		mumakan_forge_master_ring_effect = yes
+	}
+
+	ai_potential = { always = no }
+	ai_will_do = { base = 0 }
+}

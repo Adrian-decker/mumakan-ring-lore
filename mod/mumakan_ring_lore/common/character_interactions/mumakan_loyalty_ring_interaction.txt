@@ -1,0 +1,48 @@
+######################################################################
+# Mumakan Ring-Lore & Shadow Sovereignty - Palier 3 interaction
+# Offrir un Anneau de Loyaute. Right-click a powerful internal vassal (Duke+).
+# Player-only (scope:actor is_ai = no); auto-accepted (the vassal gains power).
+# Hard cap of 16 enforced by mumakan_can_forge_loyalty_ring_trigger.
+######################################################################
+
+mumakan_loyalty_ring_interaction = {
+	icon = icon_gold
+	category = interaction_category_friendly
+	common_interaction = yes
+	desc = mumakan_loyalty_ring_interaction_desc
+
+	is_shown = {
+		scope:actor = {
+			is_ai = no
+			mumakan_can_forge_loyalty_ring_trigger = yes
+		}
+		scope:recipient != scope:actor
+		scope:recipient = {
+			mumakan_valid_loyalty_ring_target_trigger = yes
+		}
+	}
+
+	is_valid_showing_failures_only = {
+		scope:actor = {
+			mumakan_can_forge_loyalty_ring_trigger = yes
+			piety >= mumakan_loyalty_ring_piety_cost
+		}
+		scope:recipient = {
+			mumakan_valid_loyalty_ring_target_trigger = yes
+		}
+	}
+
+	auto_accept = yes
+
+	on_accept = {
+		scope:actor = {
+			add_piety = {
+				value = mumakan_loyalty_ring_piety_cost
+				multiply = -1
+			}
+		}
+		mumakan_grant_loyalty_ring_effect = yes
+	}
+
+	ai_will_do = { base = 0 }
+}
