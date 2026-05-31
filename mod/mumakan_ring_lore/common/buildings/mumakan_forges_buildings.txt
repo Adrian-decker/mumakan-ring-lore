@@ -32,6 +32,11 @@ mumakan_forges_maitresses_01 = {
 				has_cultural_pillar = heritage_southern_adunaic
 			}
 		}
+		# Capped to ONE Forges per realm (client request): once the holder owns one
+		# anywhere, the build option disappears in every other duchy.
+		scope:holder = {
+			NOT = { any_directly_owned_province = { has_building_or_higher = mumakan_forges_maitresses_01 } }
+		}
 	}
 
 	is_enabled = {

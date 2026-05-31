@@ -30,12 +30,10 @@ mumakan_decision_minor_ring = {
 	}
 
 	is_valid = {
-		is_incapable = no
+		# Independence + the Forges built. Government is already constrained to
+		# non-tribal (feudal/clan) by the building's own construction requirement,
+		# so no separate government check here (a bare OR block fails invisibly).
 		is_independent_ruler = yes
-		OR = {
-			government = feudal_government
-			government = clan_government
-		}
 		mumakan_has_forge_building_trigger = yes
 	}
 
@@ -74,12 +72,7 @@ mumakan_decision_master_ring_piety = {
 	}
 
 	is_valid = {
-		is_incapable = no
 		is_independent_ruler = yes
-		OR = {
-			government = feudal_government
-			government = clan_government
-		}
 	}
 
 	cost = {
@@ -116,12 +109,7 @@ mumakan_decision_master_ring_prestige = {
 	}
 
 	is_valid = {
-		is_incapable = no
 		is_independent_ruler = yes
-		OR = {
-			government = feudal_government
-			government = clan_government
-		}
 	}
 
 	cost = {
