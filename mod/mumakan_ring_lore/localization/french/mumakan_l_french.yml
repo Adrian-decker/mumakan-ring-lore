@@ -41,6 +41,7 @@
  mumakan_master_ring_desc:0 "L'Anneau Maître éveillé de Mûmakan. Une œuvre sans défaut de terreur et de domination, rayonnant d'une autorité absolue."
  mumakan_loyalty_ring_name:0 "Anneau de Loyauté"
  mumakan_loyalty_ring_desc:0 "L'un des seize Anneaux de Loyauté, liant son porteur corps et âme au maître de l'Akhâsh-Mûmak."
+ mumakan_ring_bearer_bond:0 "Lié à son porteur"
 
  #### Notification ####
  mumakan_minor_ring_toast:0 "L'Anneau Mineur a été forgé."

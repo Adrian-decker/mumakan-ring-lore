@@ -8,8 +8,18 @@
 
 # Palier 1 - L'Anneau Mineur
 mumakan_minor_ring_template = {
-	can_equip = { always = yes }
-	can_benefit = { always = yes }
+	can_equip = {
+		custom_description = {
+			text = mumakan_ring_bearer_bond
+			always = yes
+		}
+	}
+	can_benefit = {
+		custom_description = {
+			text = mumakan_ring_bearer_bond
+			always = yes
+		}
+	}
 	can_reforge = { always = no }
 	fallback = {
 		monthly_prestige = 0.25
@@ -20,8 +30,18 @@ mumakan_minor_ring_template = {
 
 # Palier 2 Outcome A - Le Chef-d'Oeuvre Imparfait (Elven-tier)
 mumakan_elven_ring_template = {
-	can_equip = { always = yes }
-	can_benefit = { always = yes }
+	can_equip = {
+		custom_description = {
+			text = mumakan_ring_bearer_bond
+			always = yes
+		}
+	}
+	can_benefit = {
+		custom_description = {
+			text = mumakan_ring_bearer_bond
+			always = yes
+		}
+	}
 	can_reforge = { always = no }
 	fallback = {
 		monthly_prestige = 0.5
@@ -32,8 +52,18 @@ mumakan_elven_ring_template = {
 
 # Palier 2 Outcome B - L'Akhash-Mumak Eveille (the Unique)
 mumakan_master_ring_template = {
-	can_equip = { always = yes }
-	can_benefit = { always = yes }
+	can_equip = {
+		custom_description = {
+			text = mumakan_ring_bearer_bond
+			always = yes
+		}
+	}
+	can_benefit = {
+		custom_description = {
+			text = mumakan_ring_bearer_bond
+			always = yes
+		}
+	}
 	can_reforge = { always = no }
 	fallback = {
 		monthly_prestige = 1
@@ -44,8 +74,18 @@ mumakan_master_ring_template = {
 
 # Palier 3 - Anneau de Loyaute (held by ring-bound vassals)
 mumakan_loyalty_ring_template = {
-	can_equip = { always = yes }
-	can_benefit = { always = yes }
+	can_equip = {
+		custom_description = {
+			text = mumakan_ring_bearer_bond
+			always = yes
+		}
+	}
+	can_benefit = {
+		custom_description = {
+			text = mumakan_ring_bearer_bond
+			always = yes
+		}
+	}
 	can_reforge = { always = no }
 	fallback = {
 		monthly_prestige = 0.25

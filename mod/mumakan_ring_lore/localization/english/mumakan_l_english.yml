@@ -41,6 +41,7 @@
  mumakan_master_ring_desc:0 "The awakened Master Ring of Mûmakan. A flawless working of dread and dominion, radiating absolute authority."
  mumakan_loyalty_ring_name:0 "Anneau de Loyauté"
  mumakan_loyalty_ring_desc:0 "One of the sixteen Rings of Loyalty, binding its bearer body and soul to the master of the Akhâsh-Mûmak."
+ mumakan_ring_bearer_bond:0 "Bound to its bearer"
 
  #### Toast ####
  mumakan_minor_ring_toast:0 "L'Anneau Mineur has been forged."
