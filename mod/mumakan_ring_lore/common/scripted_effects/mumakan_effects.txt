@@ -50,6 +50,9 @@ mumakan_forge_master_ring_effect = {
 # Outcome A (40%) - Le Chef-d'Oeuvre Imparfait (Elven-tier ring).
 mumakan_master_ring_imperfect_effect = {
 	add_character_flag = mumakan_master_ring_imperfect
+	# Robust bearer status + 16-ring counter (covers reaching this via console/RNG, not the decision).
+	if = { limit = { NOT = { has_character_flag = mumakan_is_master_ring_bearer } } add_character_flag = mumakan_is_master_ring_bearer }
+	if = { limit = { NOT = { has_variable = mumakan_loyalty_rings_forged } } set_variable = { name = mumakan_loyalty_rings_forged value = 0 } }
 
 	create_artifact = {
 		name = mumakan_elven_ring_name
@@ -75,6 +78,9 @@ mumakan_master_ring_imperfect_effect = {
 # Outcome B (60%) - L'Akhash-Mumak Eveille (the awakened Unique).
 mumakan_master_ring_awakened_effect = {
 	add_character_flag = mumakan_master_ring_awakened
+	# Robust bearer status + 16-ring counter (covers reaching this via console/RNG, not the decision).
+	if = { limit = { NOT = { has_character_flag = mumakan_is_master_ring_bearer } } add_character_flag = mumakan_is_master_ring_bearer }
+	if = { limit = { NOT = { has_variable = mumakan_loyalty_rings_forged } } set_variable = { name = mumakan_loyalty_rings_forged value = 0 } }
 
 	create_artifact = {
 		name = mumakan_master_ring_name

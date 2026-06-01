@@ -44,9 +44,17 @@ mumakan_can_forge_master_ring_trigger = {
 }
 
 # Can the ruler launch Palier 3 (gift a Ring of Loyalty)?
-# Hard cap of 16 enforced via the per-bearer variable mumakan_loyalty_rings_forged.
+# Accepts a Master Ring obtained by ANY path: the decision (has_forged_master_ring),
+# an inherited bearer (mumakan_is_master_ring_bearer), or a console-forced / RNG
+# outcome (mumakan_master_ring_awakened / _imperfect). Hard cap of 16 via the
+# per-bearer variable mumakan_loyalty_rings_forged.
 mumakan_can_forge_loyalty_ring_trigger = {
-	has_character_flag = has_forged_master_ring
+	OR = {
+		has_character_flag = has_forged_master_ring
+		has_character_flag = mumakan_is_master_ring_bearer
+		has_character_flag = mumakan_master_ring_awakened
+		has_character_flag = mumakan_master_ring_imperfect
+	}
 	OR = {
 		NOT = { has_variable = mumakan_loyalty_rings_forged }
 		var:mumakan_loyalty_rings_forged < 16
