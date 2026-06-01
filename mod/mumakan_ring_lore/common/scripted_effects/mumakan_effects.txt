@@ -175,6 +175,7 @@ mumakan_grant_loyalty_ring_effect = {
 mumakan_transfer_bearer_status_effect = {
 	primary_heir ?= {
 		add_character_flag = mumakan_is_master_ring_bearer
+		save_scope_as = mumakan_new_bearer
 		# The heir inherits the Master Ring, so they inherit its immortality too.
 		if = {
 			limit = { NOT = { has_trait = mumakan_ringbound_immortal } }
@@ -194,6 +195,19 @@ mumakan_transfer_bearer_status_effect = {
 			limit = { NOT = { has_character_flag = mumakan_tribute_scheduler_active } }
 			add_character_flag = mumakan_tribute_scheduler_active
 			trigger_event = { id = mumakan_ring.0020 days = 30 }
+		}
+	}
+	# Re-bind the locked +100 opinion of every ring-bound servant to the NEW bearer.
+	# (The old opinion targeted the now-dead bearer and goes inert; CK3 never retargets
+	# opinions to heirs. root = deceased still holds these vassals at on_death.)
+	if = {
+		limit = { exists = scope:mumakan_new_bearer }
+		every_vassal_or_below = {
+			limit = {
+				has_trait = loyalty_to_the_ring
+				NOT = { has_opinion_modifier = { target = scope:mumakan_new_bearer modifier = mumakan_ring_of_loyalty_opinion } }
+			}
+			add_opinion = { target = scope:mumakan_new_bearer modifier = mumakan_ring_of_loyalty_opinion }
 		}
 	}
 }

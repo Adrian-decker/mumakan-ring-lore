@@ -33,11 +33,18 @@ mumakan_yearly_maintenance = {
 			limit = { has_character_flag = mumakan_master_ring_awakened }
 			add_dread = 100
 		}
-		# Maintain ring-bound servants: faction immunity + dynastic scission.
+		# Maintain ring-bound servants: faction immunity + dynastic scission +
+		# keep the locked +100 opinion pointed at the CURRENT bearer (root). This is
+		# the catch-all that re-establishes the bond after EITHER succession side,
+		# since CK3 opinions do not survive the target's death.
 		every_vassal_or_below = {
 			limit = { has_trait = loyalty_to_the_ring }
 			mumakan_faction_immunity_effect = yes
 			mumakan_cadet_scission_effect = yes
+			if = {
+				limit = { NOT = { has_opinion_modifier = { target = root modifier = mumakan_ring_of_loyalty_opinion } } }
+				add_opinion = { target = root modifier = mumakan_ring_of_loyalty_opinion }
+			}
 		}
 	}
 }
