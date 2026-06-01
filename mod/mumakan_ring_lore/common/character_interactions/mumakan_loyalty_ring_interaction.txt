@@ -1,8 +1,12 @@
 ######################################################################
 # Mumakan Ring-Lore & Shadow Sovereignty - Palier 3 interaction
 # Offrir un Anneau de Loyaute. Right-click a powerful internal vassal (Duke+).
-# Player-only (scope:actor is_ai = no); auto-accepted (the vassal gains power).
-# Hard cap of 16 enforced by mumakan_can_forge_loyalty_ring_trigger.
+#
+# is_shown is kept LIGHT (Mumakan/Black-Numenorean human ruler + a Duke+ internal
+# vassal) so the interaction is ALWAYS visible in the Vassal menu; the real
+# requirements (being a Master Ring bearer, affording the Piety, a valid target)
+# live in is_valid_showing_failures_only so an unmet requirement shows greyed-out
+# with its reason instead of the whole interaction silently disappearing.
 ######################################################################
 
 mumakan_loyalty_ring_interaction = {
@@ -14,11 +18,18 @@ mumakan_loyalty_ring_interaction = {
 	is_shown = {
 		scope:actor = {
 			is_ai = no
-			mumakan_can_forge_loyalty_ring_trigger = yes
+			culture = {
+				OR = {
+					has_cultural_parameter = heritage_group_mumakani
+					has_cultural_pillar = heritage_southern_adunaic
+				}
+			}
 		}
 		scope:recipient != scope:actor
 		scope:recipient = {
-			mumakan_valid_loyalty_ring_target_trigger = yes
+			is_landed = yes
+			tier >= tier_duchy
+			is_vassal_or_below_of = scope:actor
 		}
 	}
 
@@ -28,7 +39,9 @@ mumakan_loyalty_ring_interaction = {
 			piety >= mumakan_loyalty_ring_piety_cost
 		}
 		scope:recipient = {
-			mumakan_valid_loyalty_ring_target_trigger = yes
+			is_adult = yes
+			is_alive = yes
+			NOT = { has_trait = loyalty_to_the_ring }
 		}
 	}
 
