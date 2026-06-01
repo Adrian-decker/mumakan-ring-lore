@@ -93,19 +93,19 @@ mumakan_master_ring_awakened_effect = {
 		equip_artifact_to_owner_replace = yes
 	}
 
-	# Suprematie Absolue - lock Dread at 100.
+	# Suprematie Absolue - Dread is pinned at 100 by the ring's dread_baseline_add;
+	# this grants the full value immediately on awakening.
 	add_dread = 100
-	add_character_modifier = mumakan_awakened_dread_modifier
 
 	# Longevite Souveraine - immortality / stop aging.
 	add_trait = mumakan_ringbound_immortal
 
-	# Volonte de l'Akhash-Mumak passes to the primary heir.
-	primary_heir ?= {
-		if = {
-			limit = { NOT = { has_trait = will_of_the_ring } }
-			add_trait = will_of_the_ring
-		}
+	# Volonte de l'Akhash-Mumak is CONGENITAL - it runs through the whole bloodline.
+	# Granted to the bearer + existing children; future descendants inherit it at
+	# birth via the trait's genetic = yes (inherit_chance = 100).
+	if = { limit = { NOT = { has_trait = will_of_the_ring } } add_trait = will_of_the_ring }
+	every_child = {
+		if = { limit = { NOT = { has_trait = will_of_the_ring } } add_trait = will_of_the_ring }
 	}
 }
 
@@ -169,6 +169,11 @@ mumakan_grant_loyalty_ring_effect = {
 mumakan_transfer_bearer_status_effect = {
 	primary_heir ?= {
 		add_character_flag = mumakan_is_master_ring_bearer
+		# The heir inherits the Master Ring, so they inherit its immortality too.
+		if = {
+			limit = { NOT = { has_trait = mumakan_ringbound_immortal } }
+			add_trait = mumakan_ringbound_immortal
+		}
 		if = {
 			limit = { NOT = { has_trait = will_of_the_ring } }
 			add_trait = will_of_the_ring

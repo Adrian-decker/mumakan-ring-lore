@@ -7,7 +7,7 @@
 
 mumakan_loyalty_ring_interaction = {
 	icon = icon_gold
-	category = interaction_category_friendly
+	category = interaction_category_vassal
 	common_interaction = yes
 	desc = mumakan_loyalty_ring_interaction_desc
 

@@ -29,6 +29,9 @@ mumakan_master_ring_modifier = {
 	intrigue = 5
 	health = 5
 	fertility = 0.5
+	# Suprematie Absolue - the awakened ring pins Dread at 100. On the ring so it
+	# is visible AND inherited together with the ring by the heir.
+	dread_baseline_add = 100
 }
 
 # Applied to the awakened bearer to pin Dread at 100 (Suprematie Absolue).

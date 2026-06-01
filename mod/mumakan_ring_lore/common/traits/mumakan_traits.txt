@@ -22,6 +22,10 @@ will_of_the_ring = {
 	icon = ambitious.dds
 	ruler_designer_cost = 0
 
+	# Congenital: once it enters the dynasty it is inherited by the whole bloodline.
+	genetic = yes
+	inherit_chance = 100
+
 	martial = 3
 	intrigue = 3
 
