@@ -17,6 +17,11 @@ mumakan_decision_minor_ring = {
 	desc = mumakan_decision_minor_ring_desc
 	selection_tooltip = mumakan_decision_minor_ring_tooltip
 	confirm_text = mumakan_decision_minor_ring_confirm
+	# Reuse an existing RoE Haradrim illustration (thematic for southern Mumakan).
+	# A 'picture' block is required or CK3 logs "Decision picture ... missing entries".
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_harad_02.dds"
+	}
 
 	is_shown = {
 		is_ai = no
@@ -58,6 +63,9 @@ mumakan_decision_master_ring_piety = {
 	desc = mumakan_decision_master_ring_desc
 	selection_tooltip = mumakan_decision_master_ring_tooltip
 	confirm_text = mumakan_decision_master_ring_confirm
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_harad_04.dds"
+	}
 
 	is_shown = {
 		is_ai = no
@@ -95,6 +103,9 @@ mumakan_decision_master_ring_prestige = {
 	desc = mumakan_decision_master_ring_desc
 	selection_tooltip = mumakan_decision_master_ring_tooltip
 	confirm_text = mumakan_decision_master_ring_confirm
+	picture = {
+		reference = "gfx/interface/illustrations/decisions/decision_harad_04.dds"
+	}
 
 	is_shown = {
 		is_ai = no
