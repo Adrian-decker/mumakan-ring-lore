@@ -23,6 +23,11 @@ mumakan_forges_maitresses_01 = {
 	# "Feudal or Clan" is enforced by building_requirement_tribal = no (these
 	# cultures are tribal/clan/feudal only). No county.holder block here - that
 	# does not resolve in can_construct_potential and was hiding the building.
+	# Mirrors RoE's own working duchy_capital buildings exactly: province-rooted
+	# triggers only. RoE NEVER uses a saved scope (scope:holder, etc.) inside
+	# can_construct_potential - doing so is an undefined-scope error that silently
+	# fails the whole block and hides the building for everyone. The realm-cap is
+	# therefore enforced in is_enabled (where the holder scope resolves), not here.
 	can_construct_potential = {
 		building_requirement_castle_city_church = { LEVEL = 01 }
 		building_requirement_tribal = no
@@ -31,11 +36,6 @@ mumakan_forges_maitresses_01 = {
 				has_cultural_parameter = heritage_group_mumakani
 				has_cultural_pillar = heritage_southern_adunaic
 			}
-		}
-		# Capped to ONE Forges per realm (client request): once the holder owns one
-		# anywhere, the build option disappears in every other duchy.
-		scope:holder = {
-			NOT = { any_directly_owned_province = { has_building_or_higher = mumakan_forges_maitresses_01 } }
 		}
 	}
 
