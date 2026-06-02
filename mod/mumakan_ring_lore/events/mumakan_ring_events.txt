@@ -1,4 +1,4 @@
-######################################################################
+﻿######################################################################
 # Mumakan Ring-Lore & Shadow Sovereignty - Events
 # Palier 2 RNG outcome, Mordor subversion pressure, and the monthly tribute
 # scheduler (no native monthly pulse exists, so the bearer self-schedules it).
@@ -24,6 +24,7 @@ mumakan_ring.0002 = {
 	type = character_event
 	title = mumakan_ring.0002.t
 	desc = mumakan_ring.0002.desc
+	theme = corruption
 
 	left_portrait = {
 		character = root
@@ -44,6 +45,7 @@ mumakan_ring.0003 = {
 	type = character_event
 	title = mumakan_ring.0003.t
 	desc = mumakan_ring.0003.desc
+	theme = dread
 
 	left_portrait = {
 		character = root
@@ -64,6 +66,7 @@ mumakan_ring.0010 = {
 	type = character_event
 	title = mumakan_ring.0010.t
 	desc = mumakan_ring.0010.desc
+	theme = intrigue
 
 	left_portrait = {
 		character = root
@@ -124,9 +127,9 @@ mumakan_ring.0020 = {
 				root = { add_gold = scope:mumakan_trib }
 			}
 		}
-	}
-
-	after = {
+		# Self-reschedule MUST live in immediate, not after: a hidden event with no
+		# options never opens a window, so its after block is skipped (the log said
+		# "defines an 'after' effect without options - the 'after' effect will be ignored").
 		if = {
 			limit = {
 				is_alive = yes

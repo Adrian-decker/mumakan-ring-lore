@@ -1,4 +1,4 @@
-######################################################################
+﻿######################################################################
 # Mumakan Ring-Lore & Shadow Sovereignty - Static Modifiers
 # These are referenced by the ring artifacts (modifier = ...) and by
 # add_character_modifier effects. Only confirmed modifier keys are used.

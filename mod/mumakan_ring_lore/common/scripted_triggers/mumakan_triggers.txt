@@ -1,4 +1,4 @@
-######################################################################
+﻿######################################################################
 # Mumakan Ring-Lore & Shadow Sovereignty - Scripted Triggers
 # All triggers are character-scoped unless noted.
 # Depends on RoE-defined ids (heritage_mumakani, etc.) - RoE must be active.
@@ -17,8 +17,8 @@ mumakan_eligible_ruler_trigger = {
 		culture = { has_cultural_pillar = heritage_southern_adunaic }
 	}
 	OR = {
-		government = feudal_government
-		government = clan_government
+		has_government = feudal_government
+		has_government = clan_government
 	}
 }
 

@@ -1,4 +1,4 @@
-######################################################################
+﻿######################################################################
 # Mumakan Ring-Lore & Shadow Sovereignty - Duchy Building
 # Forges Maitresses de Mumakan. Modelled on RoE's own duchy_capital buildings
 # (town_hole_hobbit) so scoping matches the live game exactly.

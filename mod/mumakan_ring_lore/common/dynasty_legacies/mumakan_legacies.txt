@@ -1,4 +1,4 @@
-######################################################################
+﻿######################################################################
 # Mumakan Ring-Lore & Shadow Sovereignty - Dynasty Legacy Track
 # La Volonte des Anneaux. Unlocks globally for the house once the Minor Ring is
 # forged (dynasty variable mumakan_anneaux_unlocked set in Palier 1).

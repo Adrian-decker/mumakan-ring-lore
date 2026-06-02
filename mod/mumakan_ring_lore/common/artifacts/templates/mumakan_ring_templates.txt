@@ -1,4 +1,4 @@
-######################################################################
+﻿######################################################################
 # Mumakan Ring-Lore & Shadow Sovereignty - Artifact Templates
 # Modelled on RoE's elven_ring_template. The actual stat bonuses come from the
 # "modifier = ..." set in create_artifact (see scripted_effects); the template

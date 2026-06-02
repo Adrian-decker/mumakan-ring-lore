@@ -1,4 +1,4 @@
-######################################################################
+﻿######################################################################
 # Mumakan Ring-Lore & Shadow Sovereignty - Decisions
 # Player-only (is_ai = no + ai_will_do base 0) to preserve balance and keep AI
 # logic clean for multiplayer stability. Title loc key = decision id.

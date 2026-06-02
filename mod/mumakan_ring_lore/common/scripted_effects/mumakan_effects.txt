@@ -1,4 +1,4 @@
-######################################################################
+﻿######################################################################
 # Mumakan Ring-Lore & Shadow Sovereignty - Scripted Effects
 # Core logic of the mod. All create_artifact calls follow RoE's proven pattern
 # (type = miscellaneous, reuse RoE ring visuals, bonuses via modifier = ...,
@@ -244,8 +244,12 @@ mumakan_cadet_scission_effect = {
 	if = {
 		limit = {
 			has_trait = loyalty_to_the_ring
-			any_house_member = { count >= 16 is_alive = yes }
-			NOT = { is_dynasty_head = yes }
+			# any_house_member is a dynasty_house-scoped iterator, so it must run
+			# inside house = { ... } - calling it in character scope is the parse
+			# error the log reported as create_cadet_branch "Expected opening bracket".
+			house ?= { any_house_member = { count >= 16 is_alive = yes } }
+			# is_dynasty_head is not a CK3 trigger; dynasty.dynast is the head.
+			NOT = { this = dynasty.dynast }
 		}
 		create_cadet_branch = yes
 	}

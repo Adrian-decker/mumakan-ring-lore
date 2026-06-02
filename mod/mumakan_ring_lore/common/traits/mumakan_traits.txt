@@ -1,4 +1,4 @@
-######################################################################
+﻿######################################################################
 # Mumakan Ring-Lore & Shadow Sovereignty - Custom Traits
 # Icons reuse vanilla trait icons so the mod ships zero new textures.
 # "Inheritance" of loyalty_to_the_ring / will_of_the_ring is handled in
@@ -23,8 +23,10 @@ will_of_the_ring = {
 	ruler_designer_cost = 0
 
 	# Congenital: once it enters the dynasty it is inherited by the whole bloodline.
+	# CK3 forbids genetic = yes together with inherit_chance (the log reported
+	# "both set as genetic and has an inheritance chance"); the genetic system
+	# handles pass-down, and the on_action guarantees a 100% grant to children.
 	genetic = yes
-	inherit_chance = 100
 
 	martial = 3
 	intrigue = 3

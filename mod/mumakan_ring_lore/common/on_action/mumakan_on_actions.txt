@@ -1,4 +1,4 @@
-######################################################################
+﻿######################################################################
 # Mumakan Ring-Lore & Shadow Sovereignty - On-Actions
 # We HOOK built-in on_actions by adding our own custom on_action to their
 # on_actions = { } list. CK3 merges these built-in hooks across files, so this

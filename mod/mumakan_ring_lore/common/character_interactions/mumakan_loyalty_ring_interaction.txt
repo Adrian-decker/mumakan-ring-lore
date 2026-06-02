@@ -1,4 +1,4 @@
-######################################################################
+﻿######################################################################
 # Mumakan Ring-Lore & Shadow Sovereignty - Palier 3 interaction
 # Offrir un Anneau de Loyaute. Right-click a powerful internal vassal (Duke+).
 #
