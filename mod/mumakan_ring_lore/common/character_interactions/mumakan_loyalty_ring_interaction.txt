@@ -28,7 +28,8 @@ mumakan_loyalty_ring_interaction = {
 		scope:recipient != scope:actor
 		scope:recipient = {
 			is_landed = yes
-			tier >= tier_duchy
+			# character scope -> highest_held_title_tier, not the title-scope 'tier'.
+			highest_held_title_tier >= tier_duchy
 			is_vassal_or_below_of = scope:actor
 		}
 	}

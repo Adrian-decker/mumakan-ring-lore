@@ -68,7 +68,9 @@ mumakan_valid_loyalty_ring_target_trigger = {
 	is_adult = yes
 	is_alive = yes
 	NOT = { has_trait = loyalty_to_the_ring }
-	tier >= tier_duchy
+	# 'tier' is a landed_title-scope trigger; in character scope CK3 needs
+	# highest_held_title_tier (the pattern RoE itself uses).
+	highest_held_title_tier >= tier_duchy
 	# Must be an internal vassal of the actor (direct or indirect).
 	is_vassal_or_below_of = scope:actor
 }

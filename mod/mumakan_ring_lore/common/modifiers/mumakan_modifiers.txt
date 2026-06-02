@@ -34,12 +34,10 @@ mumakan_master_ring_modifier = {
 	dread_baseline_add = 100
 }
 
-# Applied to the awakened bearer to pin Dread at 100 (Suprematie Absolue).
-# dread_baseline_add raises the resting dread level; combined with add_dread = 100
-# in the forge effect, dread is effectively locked at maximum.
-mumakan_awakened_dread_modifier = {
-	dread_baseline_add = 100
-}
+# NOTE: a separate mumakan_awakened_dread_modifier was removed - it duplicated the
+# dread_baseline_add = 100 already carried by mumakan_master_ring_modifier above
+# (which is on the ring, so it is permanent AND inherited with the ring). Applying
+# both would double-count the baseline and CK3 flagged the standalone one as unused.
 
 # Palier 3 - Anneau de Loyaute (cosmetic ring; the real effects live on the
 # loyalty_to_the_ring trait + the +100 opinion modifier).

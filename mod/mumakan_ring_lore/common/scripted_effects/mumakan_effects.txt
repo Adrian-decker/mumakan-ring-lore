@@ -234,7 +234,16 @@ mumakan_faction_immunity_effect = {
 			has_trait = loyalty_to_the_ring
 			is_a_faction_member = yes
 		}
-		leave_faction = yes
+		# 'leave_faction = yes' is invalid - the effect requires a FACTION target
+		# (the log reported "expected faction"). Iterate every faction the character
+		# has joined and leave each one explicitly. every_joined_faction yields
+		# faction scope, so we save the character first and call leave_faction back
+		# in character scope with the saved faction as the target.
+		save_temporary_scope_as = mumakan_faction_leaver
+		every_joined_faction = {
+			save_temporary_scope_as = mumakan_target_faction
+			scope:mumakan_faction_leaver = { leave_faction = scope:mumakan_target_faction }
+		}
 	}
 }
 
