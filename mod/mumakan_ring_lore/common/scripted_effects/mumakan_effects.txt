@@ -142,9 +142,13 @@ mumakan_grant_loyalty_ring_effect = {
 		# creating one (a true block, not just the yearly eject in the pulse).
 		add_character_flag = joining_faction_block
 
-		# Convert to the liege's customized Dark Cult and adopt the Pious archetype.
+		# Convert to the liege's customized Dark Cult; grant the warlike 'wrathful'
+		# personality so the servant gravitates to the Belligerent (Belliciste)
+		# vassal stance instead of the Zealot (Fanatique) one. Note: CK3 picks the
+		# stance by a weighted AI score, so this makes Belliciste MUCH more likely
+		# but cannot hard-guarantee it (no trait forces a vassal stance).
 		set_character_faith = scope:actor.faith
-		if = { limit = { NOT = { has_trait = zealous } } add_trait = zealous }
+		if = { limit = { NOT = { has_trait = wrathful } } add_trait = wrathful }
 
 		# Locked +100 opinion toward the liege.
 		add_opinion = {
