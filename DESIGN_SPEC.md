@@ -81,8 +81,8 @@ existing vanilla ring/regalia **visual** so the mod ships zero missing textures.
 | `mumakan_transfer_bearer_status` (on_death/succession) | Move bearer flag/var + master ring to primary heir; grant `will_of_the_ring`. |
 | `mumakan_monthly_tribute` (legacy T5, monthly pulse) | Each ring-bound vassal pays 5% monthly gold to bearer. |
 | `mumakan_lock_dread` (yearly pulse) | Re-set awakened bearer dread to 100 (no native lock). |
-| `mumakan_faction_immunity` (faction on_actions + monthly cleanup) | Eject `loyalty_to_the_ring` holders from factions vs the bearer. |
-| `mumakan_check_cadet_scission` (yearly pulse) | If an immortal servant's house > 15 living members, split a cadet branch. |
+| `mumakan_faction_immunity` (yearly pulse) | Sets the `joining_faction_block` flag on `loyalty_to_the_ring` holders (the game then bars them from joining/creating factions and lists them under "will not join a faction"), and ejects them from any faction they are already in. |
+| `mumakan_check_cadet_scission` (yearly pulse) | If an immortal ring-servant's house exceeds 15 living members, the servant **founds a new cadet house** under their own dynasty (`create_cadet_branch`): the servant becomes that new house's founder/head and the excess branch moves with them. No claims, titles, or succession are touched. |
 
 ## 9. CK3 engine-limitation decisions (documented for the client)
 1. **No "lock dread" primitive** → maintained by re-setting `set_dread = 100` on a yearly pulse for

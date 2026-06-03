@@ -137,6 +137,10 @@ mumakan_grant_loyalty_ring_effect = {
 		if = { limit = { NOT = { has_trait = mumakan_ringbound_immortal } } add_trait = mumakan_ringbound_immortal }
 		add_character_modifier = mumakan_ringbound_servant_modifier
 		add_character_flag = mumakan_ringbound_servant
+		# Vanilla/RoE faction validity reads this flag: it makes the servant show up
+		# in the game's "will not join a faction" list and blocks them joining OR
+		# creating one (a true block, not just the yearly eject in the pulse).
+		add_character_flag = joining_faction_block
 
 		# Convert to the liege's customized Dark Cult and adopt the Pious archetype.
 		set_character_faith = scope:actor.faith
@@ -220,15 +224,26 @@ mumakan_ringbound_servant_inherit_effect = {
 		if = { limit = { NOT = { has_trait = mumakan_ringbound_immortal } } add_trait = mumakan_ringbound_immortal }
 		add_character_modifier = mumakan_ringbound_servant_modifier
 		add_character_flag = mumakan_ringbound_servant
+		add_character_flag = joining_faction_block
 	}
 }
 
 ######################## MAINTENANCE PULSES ########################
 
 # Faction immunity: a ring-bound servant cannot stand against the bearer.
-# No base-file override - we simply eject loyalty_to_the_ring holders from any
-# faction. Called per-character from the yearly pulse.
+# Two layers, no base-file override: (1) the joining_faction_block flag makes the
+# game genuinely bar them from joining/creating factions and lists them under
+# "will not join a faction"; (2) we still eject any faction they are already in.
+# Called per-character from the yearly pulse (also retro-applies the flag to
+# servants created before this update).
 mumakan_faction_immunity_effect = {
+	if = {
+		limit = {
+			has_trait = loyalty_to_the_ring
+			NOT = { has_character_flag = joining_faction_block }
+		}
+		add_character_flag = joining_faction_block
+	}
 	if = {
 		limit = {
 			has_trait = loyalty_to_the_ring
@@ -248,7 +263,11 @@ mumakan_faction_immunity_effect = {
 }
 
 # Regle d'Isolation Dynastique: if an immortal servant's house exceeds 15 living
-# members, spin off a cadet branch to prevent family bloat.
+# members, the servant FOUNDS A NEW CADET HOUSE under their own dynasty.
+# create_cadet_branch is the scripted "Create Cadet Branch" interaction: it makes
+# a new house WITHIN THE SAME DYNASTY with this character as its founder/head, and
+# the descendants who follow them move into it. It does NOT strip claims, titles,
+# or succession - it only prevents one house from bloating with immortal servants.
 mumakan_cadet_scission_effect = {
 	if = {
 		limit = {

@@ -22,7 +22,7 @@
 
  #### Interaction - Palier 3 ####
  mumakan_loyalty_ring_interaction:0 "Offrir un Anneau de Loyauté"
- mumakan_loyalty_ring_interaction_desc:0 "Gift one of the #Y Anneaux de Loyauté#! to a powerful internal vassal (Duke or higher). They convert to your Dark Cult, become a devoted immortal servant, gain a locked #G +100#! opinion of you, and can never raise a faction against you. A maximum of #Y 16#! may ever be forged."
+ mumakan_loyalty_ring_interaction_desc:0 "Gift one of the #Y Anneaux de Loyauté#! to a powerful internal vassal (Duke or higher). They convert to your Dark Cult, become a devoted immortal servant, gain a locked #G +100#! opinion of you, and can never raise a faction against you.\n\nRings of Loyalty forged: #Y [GetPlayer.MakeScope.Var('mumakan_loyalty_rings_forged').GetValue|0] / 16#!."
 
  #### Traits ####
  trait_loyalty_to_the_ring:0 "Serviteur de l'Anneau"
