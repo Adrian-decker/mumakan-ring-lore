@@ -43,6 +43,22 @@
  mumakan_loyalty_ring_desc:0 "One of the sixteen Rings of Loyalty, binding its bearer body and soul to the master of the Akhâsh-Mûmak."
  mumakan_ring_bearer_bond:0 "Bound to its bearer"
 
+ #### Opinion modifiers ####
+ # Without this the game shows the raw key 'mumakan_ring_of_loyalty_opinion' in the
+ # opinion breakdown. Opinion modifiers are localized by their key name directly.
+ mumakan_ring_of_loyalty_opinion:0 "Bound by the Ring of Loyalty"
+
+ #### Character modifiers ####
+ # mumakan_ringbound_servant_modifier is applied via add_character_modifier, so its
+ # name is shown in the character's modifier list - it needs a label or the raw key
+ # leaks. The 4 ring modifiers below are applied only as artifact 'modifier = ...'
+ # (their stats show as individual lines), but naming them keeps tooltips clean.
+ mumakan_ringbound_servant_modifier:0 "Immortal Servant of the Ring"
+ mumakan_minor_ring_modifier:0 "L'Anneau Mineur"
+ mumakan_elven_ring_modifier:0 "Le Chef-d'Œuvre Imparfait"
+ mumakan_master_ring_modifier:0 "L'Akhâsh-Mûmak"
+ mumakan_loyalty_ring_modifier:0 "Anneau de Loyauté"
+
  #### Toast ####
  mumakan_minor_ring_toast:0 "L'Anneau Mineur has been forged."
 

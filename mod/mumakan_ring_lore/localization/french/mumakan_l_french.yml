@@ -43,6 +43,22 @@
  mumakan_loyalty_ring_desc:0 "L'un des seize Anneaux de Loyauté, liant son porteur corps et âme au maître de l'Akhâsh-Mûmak."
  mumakan_ring_bearer_bond:0 "Lié à son porteur"
 
+ #### Modificateurs d'opinion ####
+ # Sans cette clé, le jeu affiche la clé brute 'mumakan_ring_of_loyalty_opinion'
+ # dans le détail d'opinion. Les modificateurs d'opinion se localisent par leur clé.
+ mumakan_ring_of_loyalty_opinion:0 "Lié par l'Anneau de Loyauté"
+
+ #### Modificateurs de personnage ####
+ # mumakan_ringbound_servant_modifier est appliqué via add_character_modifier : son
+ # nom apparaît dans la liste des modificateurs du personnage et doit donc être
+ # traduit, sinon la clé brute s'affiche. Les 4 modificateurs d'anneau ci-dessous
+ # ne servent que comme 'modifier = ...' d'artefact, mais on les nomme par propreté.
+ mumakan_ringbound_servant_modifier:0 "Serviteur Immortel de l'Anneau"
+ mumakan_minor_ring_modifier:0 "L'Anneau Mineur"
+ mumakan_elven_ring_modifier:0 "Le Chef-d'Œuvre Imparfait"
+ mumakan_master_ring_modifier:0 "L'Akhâsh-Mûmak"
+ mumakan_loyalty_ring_modifier:0 "Anneau de Loyauté"
+
  #### Notification ####
  mumakan_minor_ring_toast:0 "L'Anneau Mineur a été forgé."
 
